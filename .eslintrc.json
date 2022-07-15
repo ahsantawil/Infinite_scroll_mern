@@ -9,8 +9,15 @@
         "airbnb-base"
     ],
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": 12
     },
     "rules": {
+        "no-console" : "off",
+        "linebreak-style" :"off",
+        "indent": "off",
+        "eol-last":"off",
+        "quotes": "off",
+        "object-curly-newline":"off",
+        "no-trailing-spaces": "off"
     }
 }
