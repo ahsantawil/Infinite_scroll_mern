@@ -1,31 +1,20 @@
 {
-  "name": "notes-app-back-end",
+  "name": "infinite_scroll_mern",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./src",
-    "dev": "nodemon ./src/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahsantawil/notes-app-back-end.git"
+    "url": "git+https://github.com/ahsantawil/Infinite_scroll_mern.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ahsantawil/notes-app-back-end/issues"
+    "url": "https://github.com/ahsantawil/Infinite_scroll_mern/issues"
   },
-  "homepage": "https://github.com/ahsantawil/notes-app-back-end#readme",
-  "devDependencies": {
-    "eslint": "^8.19.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
-  },
-  "dependencies": {
-    "@hapi/hapi": "^20.2.2",
-    "nanoid": "^3.3.4"
-  }
+  "homepage": "https://github.com/ahsantawil/Infinite_scroll_mern#readme"
 }
