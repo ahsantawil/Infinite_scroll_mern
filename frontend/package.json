@@ -21,6 +21,9 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "rules": {
+      "react-hooks/exhaustive-deps" : "disable"
+    },
     "extends": [
       "react-app",
       "react-app/jest"

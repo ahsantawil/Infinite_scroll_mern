@@ -8,6 +8,8 @@ const UserList = () => {
     const [tempId, setTempId] = useState(0);
     const [limit, setLimit] = useState(20);
     const [keyword, setKeyword] = useState('');
+    const [query, setQuery] = useState('');
+    const [hasMore, setHasMore] = useState(true);
 
 
     useEffect(()=> {
@@ -19,23 +21,39 @@ const UserList = () => {
             const newUsers = response.data.result;
             setUsers([...users, ...newUsers]);
             setTempId(response.data.lastId);
+            setHasMore(response.data.hasMore);
         };
 
+        const fetchMore = () => {
+            setLastId(tempId);
+        };
 
+        const SeacrhData = (e) => {
+            e.preventDefault();
+            setLastId(0);
+            setUsers([]);
+            setKeyword(query);
+        };
   return (
     <div className="container mt-5">
         <div className="columns">
             <div className="column is-centered">
-                <form>
+                <form onSubmit={SeacrhData}>
                     <div className="field has-addons">
                         <div className="control is-expanded">
-                            <input type="text"  className="input" placeholder="Find Something .. " />
+                            <input type="text"  className="input" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Find Something .. " />
                         </div>
                         <div className="control">
                             <button type="submit" className="button is-info">Search</button>
                         </div>
                     </div>
                 </form>
+                <InfiniteScroll 
+                    dataLength={users.length}
+                    next={fetchMore}
+                    hasMore={hasMore}
+                    loader={<h4>loading ...</h4>}
+                >
                 <table className="table is-striped is-bordered is-fullwidth mt-2">
                     <thead>
                         <tr>
@@ -58,6 +76,7 @@ const UserList = () => {
                         ))}
                     </tbody>
                 </table>
+                </InfiniteScroll>
             </div>
         </div>
     </div>
